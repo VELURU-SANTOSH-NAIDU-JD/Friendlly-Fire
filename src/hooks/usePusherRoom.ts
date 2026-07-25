@@ -14,7 +14,7 @@ export function usePusherRoom(roomCode: string) {
     if (!pusher) return;
     
     // Pass user_id for presence channel authentication
-    pusher.config.auth = {
+    (pusher.config as any).auth = {
       params: { user_id: myPlayerId }
     };
 
